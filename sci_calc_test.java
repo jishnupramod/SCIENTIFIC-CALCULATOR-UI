@@ -1,5 +1,6 @@
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Font;
 import java.awt.*;
 
 class test extends JFrame {
@@ -20,8 +21,14 @@ class test extends JFrame {
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       f.setResizable(false);
 
-      t = new JTextField(16);
+      Font font1 = new Font("SansSerif", Font.BOLD, 50);
+
+      t = new JTextField();
       t.setBackground(new Color(214, 217, 223));
+      t.setLocation(5, 5);
+      t.setSize(150, 50);
+      t.setFont(font1);
+      t.setHorizontalAlignment(JTextField.RIGHT);
 
       t.setEditable(false);
 
@@ -351,6 +358,12 @@ class test extends JFrame {
 
                     bdel.setText("DEL");
                 }
+
+                else if(e.getClickCount() == 1) {
+                    String current = t.getText();
+                    String updated = current.substring(0, current.length() - 1);
+                    t.setText(updated);
+                }
             }
         });
 
@@ -363,6 +376,7 @@ class test extends JFrame {
                     p1.setBackground(Color.GRAY);
                     p2.setBackground(Color.GRAY);
                     p0.setBackground(Color.GRAY);
+                    t.setForeground(Color.WHITE);
                     // try {
                     //     UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
                     // }
@@ -376,6 +390,7 @@ class test extends JFrame {
                     p1.setBackground(new Color(214, 217, 223));
                     p2.setBackground(new Color(214, 217, 223));
                     p0.setBackground(new Color(214, 217, 223));
+                    t.setForeground(Color.BLACK);
                     // try {
                     //     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
                     // }
@@ -386,7 +401,84 @@ class test extends JFrame {
             }
         });
 
+        b1.addActionListener(new java.awt.event.ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                t.setText(t.getText() + "1");
+            }
+        });
 
+        b2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "2");
+            }
+        });
+
+        b3.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "3");
+            }
+        });
+
+        b4.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "4");
+            }
+        });
+
+        b5.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "5");
+            }
+        });
+
+        b6.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "6");
+            }
+        });
+
+        b7.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "7");
+            }
+        });
+
+        b8.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "8");
+            }
+        });
+
+        b9.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "9");
+            }
+        });
+
+        b0.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText(t.getText() + "0");
+            }
+        });
+
+        bac.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t.setText("Greetings From JCalc !");
+                // new Timer(3000, this).start();
+                t.setText("");
+            }
+        });
 
     }
 
